@@ -139,7 +139,7 @@ latent_dim = 128
 generator = keras.Sequential(
     [
         keras.Input(shape=(latent_dim,)),
-        layers.Dense((4*latent_dim)*(4*latent_dim)*3),
+        layers.Dense(512*512*3),
         layers.Reshape((512, 512, 3)),
         layers.Conv2DTranspose(128, kernel_size=4, strides=2, padding="same"),
         layers.LeakyReLU(alpha=0.2),
